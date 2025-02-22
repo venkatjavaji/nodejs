@@ -10,7 +10,8 @@ export const dataController = async (ctx: Koa.Context) => {
         ctx.body = await service.fetchData(params.id);
     } catch (error) {
         logger.error('Controller Error', error);
-        ctx.status = 400;
-        ctx.body = { error: error.message };
+        // ctx.status = 400;
+        // ctx.body = { error: error.message };
+        throw error; // Let the global error handler catch and process this
     }
 }; 

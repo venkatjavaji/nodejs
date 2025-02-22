@@ -13,7 +13,8 @@ export const authMiddleware = async (ctx: Koa.Context, next: Koa.Next) => {
         await next();
     } catch (error) {
         logger.error('Authentication Middleware Error', error);
-        ctx.status = 500;
-        ctx.body = { error: 'Internal Server Error' };
+        // ctx.status = 500;
+        // ctx.body = { error: 'Internal Server Error' };
+        throw error; // Let the global error handler catch and process this
     }
 };
