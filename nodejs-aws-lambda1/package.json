@@ -2,9 +2,10 @@
     "name": "koa-lambda",
     "version": "1.0.0",
     "description": "A Koa.js based AWS Lambda function with API Gateway integration",
-    "main": "src/app.ts",
+    "type": "commonjs",
+    "main": "dist/app.js",
     "scripts": {
-        "start": "ts-node src/app.ts",
+        "start": "node dist/app.js",
         "build": "tsc",
         "lint": "eslint . --ext .ts",
         "test": "jest"
@@ -16,6 +17,7 @@
         "aws-sdk": "^2.1692.0",
         "aws-serverless-express": "^3.4.0",
         "axios": "^1.7.9",
+        "dotenv": "^16.4.7",
         "koa": "^2.14.2",
         "koa-bodyparser": "^4.4.1",
         "node-cache": "^5.1.2",
