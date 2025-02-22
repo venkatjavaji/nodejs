@@ -9,7 +9,6 @@ dotenv.config();
 
 const app = new Koa();
 
-
 logger.info(`Running in ${process.env.NODE_ENV} mode`);
 
 const PORT = process.env.PORT || 3000;
