@@ -6,7 +6,7 @@ import { OAuthClient } from '../utils/oauthClient';
 export class MyService {
     async fetchData(id: string) {
         try {
-            if (process.env.NODE_ENV !== 'test') {
+            if (process.env.NODE_ENV === 'test') {
                 logger.info('Returning dummy data for test environment');
                 return ResponseParamsSchema.parse({
                     data: `Dummy data for ID: ${id}`,

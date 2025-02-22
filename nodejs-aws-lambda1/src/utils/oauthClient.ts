@@ -20,7 +20,7 @@ export class OAuthClient {
             return this.token;
         }
 
-        if (process.env.NODE_ENV !== 'test') {
+        if (process.env.NODE_ENV === 'test') {
             logger.info('Generating dummy token for test environment');
             this.token = 'dummy-test-token';
             this.tokenExpiry = Date.now() + 3600 * 1000; // 1 hour expiry

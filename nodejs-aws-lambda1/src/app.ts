@@ -5,8 +5,11 @@ import { router } from './routes/router';
 import * as dotenv from 'dotenv';
 import { logger } from './utils/logger';
 
-const app = new Koa();
 dotenv.config();
+
+const app = new Koa();
+
+
 logger.info(`Running in ${process.env.NODE_ENV} mode`);
 
 const PORT = process.env.PORT || 3000;
@@ -16,7 +19,7 @@ app.use(bodyParser());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV === 'test') {
     app.listen(PORT, () => {
         logger.info(`Server running on http://localhost:${PORT}`);
     });
